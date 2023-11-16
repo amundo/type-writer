@@ -6,6 +6,10 @@ css: type-writer.css
 
 <main>
 
+Repo at <https://github.com/amundo/type-writerhttps://github.com/amundo/type-writer>
+
+Github demo at <https://amundo.github.io/type-writer/type-writer-docs.html>
+
 <section id=example>
 
 ## Example
