@@ -4,6 +4,14 @@ title:  \<type-writer\> docs
 css: type-writer.css
 ---
 
+<style>
+type-writer {
+  margin: 1em;
+  border: 1px dashed lightgray;
+  padding: 1em;
+  font-family: monospace;
+}
+</style>
 <main>
 
 Repo at <https://github.com/amundo/type-writer>
@@ -21,9 +29,18 @@ Simulate typing out the `textContent` of the component. The simplest way to use 
 ```
 
 ```{=html}
-<type-writer>I am being typed out like on a typewriter.</type-writer>
+<type-writer id=example>I am being typed out like on a typewriter.</type-writer>
 ```
 
+<button style="display:flex; gap:.4em; align-items: center;" id=redo><span style=font-size:2rem>⌨️</span> <span>Retype!</span></button>
+
+<script>
+let exampleTypeWriter = document.querySelector('type-writer#example')
+let redoButton = document.querySelector('#redo')
+redoButton.addEventListener('click', () => {
+  exampleTypeWriter.value = exampleTypeWriter.textContent
+})
+</script>
 
 There are three ways to set the text to be displayed in the component:
 

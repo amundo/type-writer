@@ -89,6 +89,14 @@
 <header id="title-block-header">
 <h1 class="title">&lt;type-writer&gt; docs</h1>
 </header>
+<style>
+type-writer {
+  margin: 1em;
+  border: 1px dashed lightgray;
+  padding: 1em;
+  font-family: monospace;
+}
+</style>
 <main>
 <p>Repo at <a href="https://github.com/amundo/type-writer"
 class="uri">https://github.com/amundo/type-writer</a></p>
@@ -102,7 +110,17 @@ The simplest way to use the component is to set the text to be displayed
 as the text content of the component:</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;type-writer&gt;</span>I am being typed out like on a typewriter.<span class="kw">&lt;/type-writer&gt;</span></span></code></pre></div>
-<type-writer>I am being typed out like on a typewriter.</type-writer>
+<type-writer id=example>I am being typed out like on a typewriter.</type-writer>
+<button style="display:flex; gap:.4em; align-items: center;" id="redo">
+<span style="font-size:2rem">⌨️</span> <span>Retype!</span>
+</button>
+<script>
+let exampleTypeWriter = document.querySelector('type-writer#example')
+let redoButton = document.querySelector('#redo')
+redoButton.addEventListener('click', () => {
+  exampleTypeWriter.value = exampleTypeWriter.textContent
+})
+</script>
 <p>There are three ways to set the text to be displayed in the
 component:</p>
 <ul>
